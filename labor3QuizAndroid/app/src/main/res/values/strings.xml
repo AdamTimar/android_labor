@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">labor3QuizAndroid</string>
+    <string name="quiz_text">QUIZ</string>
+    <string name="your_name_text">Your name</string>
+    <string name="get_started_button_text">GET STARTED</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_score_text">Your score</string>
+</resources>
