@@ -1,10 +1,7 @@
 package com.example.labor4quiz
 
-import android.app.Activity
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 

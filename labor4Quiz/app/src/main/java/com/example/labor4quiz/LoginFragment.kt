@@ -1,28 +1,17 @@
 package com.example.labor4quiz
 
-import android.R.attr
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import android.content.Intent
-import android.provider.ContactsContract
 import android.provider.ContactsContract.CommonDataKinds.Phone
-
-import android.content.ContentResolver
-
-import android.R.attr.data
 import android.app.Activity
 import android.graphics.Color
-import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.EditText
 
 
