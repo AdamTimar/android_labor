@@ -1,6 +1,5 @@
 package com.example.labor5quiz
 
-import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
