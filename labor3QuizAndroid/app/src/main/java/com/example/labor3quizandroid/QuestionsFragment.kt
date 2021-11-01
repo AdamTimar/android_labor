@@ -29,7 +29,6 @@ class QuestionsFragment : Fragment() {
     private var goodAnswerPosition = 0
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -113,9 +112,8 @@ class QuestionsFragment : Fragment() {
 
     private fun setListenersOnButtons(){
         button1.setOnClickListener {
-            if(goodAnswerPosition == 0) {
+            if(goodAnswerPosition == 0)
                 goodAnswers++
-            }
             questionCounter++
             setTextForButtonsAndTextView()
         }

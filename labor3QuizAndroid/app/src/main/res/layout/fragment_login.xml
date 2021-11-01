@@ -38,14 +38,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/chooseContactButton"
+        style="@style/chooseContactButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/choose_contact_button_margin_top"
+        android:text="@string/choose_contact_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yourNameTextInput" />
+
+    <Button
         android:id="@+id/getStartedButton"
-        android:layout_width="@dimen/get_started_button_width"
+        style="@style/getStartedButtonStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/get_started_button_margin_top"
         android:text="@string/get_started_button_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        style="@style/GetStartedButtonStyle"
-        app:layout_constraintTop_toBottomOf="@+id/yourNameTextInput" />
+        app:layout_constraintTop_toBottomOf="@+id/chooseContactButton" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

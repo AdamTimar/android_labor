@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="quiz_text_color">#5B000000</color>
     <color name="get_started_button_color">#F57F24</color>
+    <color name="choose_contact_button_color">#087C71</color>
 
 
 </resources>

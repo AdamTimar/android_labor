@@ -6,11 +6,14 @@
     <dimen name="name_input_width">115dp</dimen>
     <dimen name="name_input_margin_top">70dp</dimen>
     <dimen name="get_started_button_width">140dp</dimen>
-    <dimen name="get_started_button_margin_top">70dp</dimen>
+    <dimen name="get_started_button_margin_top">90dp</dimen>
     <dimen name="question_text_margin_top">128dp</dimen>
     <dimen name="first_answer_text_margin_top">120dp</dimen>
     <dimen name="last_three_answers_text_margin_top">30dp</dimen>
     <dimen name="final_score_margin_top">150dp</dimen>
+    <dimen name="choose_contact_button_margin_top">90dp</dimen>
+    <dimen name="choose_contact_button_padding">10dp</dimen>
+    <dimen name="get_started_button_padding">10dp</dimen>
 
 
 </resources>

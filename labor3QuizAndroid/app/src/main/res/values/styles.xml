@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="GetStartedButtonStyle" parent="android:style/Widget.Button" >
+    <style name="getStartedButtonStyle" parent="android:style/Widget.Button" >
         <item name="android:background">@color/get_started_button_color</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/get_started_button_padding</item>
     </style>
+
+    <style name="chooseContactButtonStyle" parent="android:style/Widget.Button" >
+        <item name="android:background">@color/choose_contact_button_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/choose_contact_button_padding</item>
+    </style>
+
 </resources>

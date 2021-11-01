@@ -31,6 +31,15 @@ class LoginFragment : Fragment() {
             transaction.commit()
         }
 
+        rootView.findViewById<Button>(R.id.chooseContactButton).setOnClickListener {
+            val manager: FragmentManager = requireActivity().supportFragmentManager
+            val transaction: FragmentTransaction = manager.beginTransaction()
+            val contactsFragment = ContactsFragment()
+            transaction.replace(R.id.fragmentContainerView, contactsFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
         return rootView
 
     }

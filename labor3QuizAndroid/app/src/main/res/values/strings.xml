@@ -5,4 +5,6 @@
     <string name="get_started_button_text">GET STARTED</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_score_text">Your score</string>
+    <string name="choose_contact_text">CHOOSE CONTACT</string>
+
 </resources>
