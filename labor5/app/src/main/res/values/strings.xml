@@ -7,5 +7,6 @@
     <string name="your_score_text">Your score</string>
     <string name="choose_contact_text">CHOOSE CONTACT</string>
     <string name="your_name_is_textview_text">The name of the player is:</string>
+    <string name="try_again_text">Try again</string>
 
 </resources>

@@ -11,6 +11,6 @@
     <color name="get_started_button_color">#F57F24</color>
     <color name="choose_contact_button_color">#087C71</color>
     <color name="name_text_color">#E91E63</color>
-
+    <color name="score_text_color">#B8003A</color>
 
 </resources>

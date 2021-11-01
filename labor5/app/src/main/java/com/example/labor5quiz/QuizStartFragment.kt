@@ -1,5 +1,6 @@
 package com.example.labor5quiz
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,9 +25,9 @@ class QuizStartFragment : Fragment() {
     private lateinit var chooseContactButoon : Button
     private lateinit var getStartedButoon : Button
     private var userNamePhoneNumber: String? = null
-    private var contactsPressed = false
 
 
+    @SuppressLint("CommitPrefEdits")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,7 +60,6 @@ class QuizStartFragment : Fragment() {
         })
 
         chooseContactButoon.setOnClickListener {
-            contactsPressed = true
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = Phone.CONTENT_TYPE
             startActivityForResult(intent,111)
@@ -67,6 +67,8 @@ class QuizStartFragment : Fragment() {
 
         getStartedButoon.setOnClickListener {
 
+            userNamePhoneNumber = null
+            yourNameEditText.setText("")
             val manager: FragmentManager = requireActivity().supportFragmentManager
             val transaction: FragmentTransaction = manager.beginTransaction()
             val questionsFragment = QuestionFragment()

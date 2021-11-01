@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".QuizStartFragment"
-    android:id="@+id/quizStartFragment">
+    android:id="@+id/quizStartFragment"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/quizTextView"

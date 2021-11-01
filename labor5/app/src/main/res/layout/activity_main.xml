@@ -12,7 +12,5 @@
         android:name="com.example.labor5quiz.QuizStartFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="282dp"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

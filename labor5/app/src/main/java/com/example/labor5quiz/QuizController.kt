@@ -8,5 +8,4 @@ class QuizController(var quizList : List<Quiz>) {
             (quizList[i].answers as MutableList<String>).shuffle()
         }
     }
-
 }

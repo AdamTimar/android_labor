@@ -1,6 +1,5 @@
 package com.example.labor5quiz
 
-import Quiz
 import QuizController
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,11 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
+
 
 
 class QuestionFragment : Fragment() {
@@ -32,9 +30,15 @@ class QuestionFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        var quizes = readQuestionsFromFile()
+        var quizes = (activity as MainActivity).getQuestionsViewModel().questions
         quizController = QuizController(quizes)
         quizController.randomizeQuestions()
+
+        requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                return
+            }
+        })
     }
 
     override fun onCreateView(
@@ -56,36 +60,10 @@ class QuestionFragment : Fragment() {
         return rootView
     }
 
-    private fun readQuestionsFromFile() : List<Quiz>{
 
-        val inputStream: InputStream = resources.openRawResource(R.raw.questions)
-        val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-        var question: String?
-        var answ1: String
-        var answ2: String
-        var answ3: String
-        var answ4: String
-        var goodAnsw: String
-        var quiz : Quiz
-        var quizes = mutableListOf<Quiz>()
-        while ((bufferedReader.readLine().also { question = it })!= null) {
-            println(question)
-            answ1 = bufferedReader.readLine()
-            answ2 = bufferedReader.readLine()
-            answ3 = bufferedReader.readLine()
-            answ4 = bufferedReader.readLine()
-            goodAnsw = bufferedReader.readLine()
-
-            quiz = Quiz(question!!, listOf(answ1,answ2,answ3,answ4),goodAnsw)
-            quizes.add(quiz)
-        }
-
-        return quizes
-
-    }
 
     private fun setTextForButtonsAndTextView() {
-        if (questionCounter== quizController.quizList.size) {
+        if (questionCounter == quizController.quizList.size) {
 
             val bundle = Bundle()
             bundle.putInt(Constants.SCORE,goodAnswers)
@@ -93,12 +71,10 @@ class QuestionFragment : Fragment() {
 
             val manager: FragmentManager = requireActivity().supportFragmentManager
             val transaction: FragmentTransaction = manager.beginTransaction()
-            val resultFragment = QuizEndFragment()
-            resultFragment.arguments = bundle
-            transaction.replace(R.id.fragmentContainerView, resultFragment)
-            transaction.addToBackStack(null)
+            val quizEndFragment = QuizEndFragment()
+            quizEndFragment.arguments = bundle
+            transaction.replace(R.id.fragmentContainerView, quizEndFragment)
             transaction.commit()
-
         }
         else {
             goodAnswerPosition = findGoodAnswerPosition()
