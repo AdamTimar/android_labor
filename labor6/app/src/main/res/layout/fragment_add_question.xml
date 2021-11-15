@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/questionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/answers_layout_margin_left"
+        android:layout_marginEnd="@dimen/answers_layout_margin_right"
+        android:layout_marginTop="@dimen/first_add_answer_margin_top"
+        style="@style/answersTextInputStyle"
+
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answers_height"
+            android:hint="@string/question_hint"
+            android:background="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/answer1Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/answers_layout_margin_top"
+        android:layout_marginStart="@dimen/answers_layout_margin_left"
+        android:layout_marginEnd="@dimen/answers_layout_margin_right"
+        style="@style/goodAnswerTextInputStyle"
+
+        app:layout_constraintTop_toBottomOf="@+id/questionLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/answer1Text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answers_height"
+            android:hint="@string/correct_answer_hint"
+            android:background="@null"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/answer2Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/answers_layout_margin_top"
+        android:layout_marginStart="@dimen/answers_layout_margin_left"
+        android:layout_marginEnd="@dimen/answers_layout_margin_right"
+        style="@style/answersTextInputStyle"
+        app:layout_constraintTop_toBottomOf="@+id/answer1Layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/answer2Text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answers_height"
+            android:hint="@string/answer_hint"
+            android:background="@null"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/answer3Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/answers_layout_margin_top"
+        android:layout_marginStart="@dimen/answers_layout_margin_left"
+        android:layout_marginEnd="@dimen/answers_layout_margin_right"
+        style="@style/answersTextInputStyle"
+        app:layout_constraintTop_toBottomOf="@+id/answer2Layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/answer3Text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answers_height"
+            android:hint="@string/answer_hint"
+            android:background="@null"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/answer4Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/answers_layout_margin_top"
+        android:layout_marginStart="@dimen/answers_layout_margin_left"
+        android:layout_marginEnd="@dimen/answers_layout_margin_right"
+        style="@style/answersTextInputStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer3Layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/answer4Text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answers_height"
+            android:hint="@string/answer_hint"
+            android:background="@null"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/addQuestionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/add_question_margin_top"
+        android:text="@string/add_question_text"
+        style="@style/goodAnswerTextInputStyle"
+        android:padding="@dimen/choose_contact_button_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer4Layout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

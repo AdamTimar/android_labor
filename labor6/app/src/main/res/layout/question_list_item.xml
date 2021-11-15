@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/questionListItemQuestionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/question_margin_start"
+        android:layout_marginTop="@dimen/question_margin_top"
+        android:textColor="@color/black"
+        android:textSize="@dimen/your_name_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionListItemQuestionTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/question_margin_start"
+        android:layout_marginTop="@dimen/questions_list_item_correct_answer_margin_top"
+        android:textColor="@color/question_type_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionListItemQuestionTextView" />
+
+    <TextView
+        android:id="@+id/questionListItemCorrectAnswerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/question_margin_start"
+        android:layout_marginTop="@dimen/questions_list_item_correct_answer_margin_top"
+        android:textColor="@color/correct_answer_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionListItemQuestionTypeTextView" />
+
+    <TextView
+        android:id="@+id/detailsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/details_textview_margin_start"
+        android:layout_marginTop="@dimen/details_textview_margin_top"
+        style="@style/detailsAndDeleteTextViewStyle"
+        android:text="@string/details_text"
+        app:layout_constraintStart_toStartOf="@+id/questionListItemCorrectAnswerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/questionListItemCorrectAnswerTextView" />
+
+    <TextView
+        android:id="@+id/deleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/delete_textview_margin_start"
+        style="@style/detailsAndDeleteTextViewStyle"
+        android:text="@string/delete_text"
+        app:layout_constraintStart_toEndOf="@+id/detailsTextView"
+        app:layout_constraintTop_toTopOf="@+id/detailsTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
