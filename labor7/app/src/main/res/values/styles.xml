@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="getStartedButtonStyle" parent="android:style/Widget.Button" >
+        <item name="android:background">@color/get_started_button_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/get_started_button_padding</item>
+    </style>
+
+    <style name="answersTextInputStyle">
+        <item name="android:layout_height">@dimen/answers_height</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/answers_text_input_layout_border</item>
+        <item name="android:padding">@dimen/answers_edittext_padding</item>
+    </style>
+
+    <style name="goodAnswerTextInputStyle">
+        <item name="android:layout_height">@dimen/answers_height</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/good_answer_input_layout_border</item>
+        <item name="android:padding">@dimen/answers_edittext_padding</item>
+    </style>
+
+
+    <style name="chooseContactButtonStyle" parent="android:style/Widget.Button" >
+        <item name="android:background">@color/choose_contact_button_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/choose_contact_button_padding</item>
+    </style>
+
+    <style name="detailsAndDeleteTextViewStyle" parent="android:style/Widget.TextView" >
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/details_and_delete_buttons_color</item>
+    </style>
+
+
+</resources>

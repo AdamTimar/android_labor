@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/drawable/answers_text_input_layout_border.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/drawable/good_answer_input_layout_border.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/drawable/ic_question_mark.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/drawer_menu.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/fragment_add_question.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/fragment_details.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/fragment_question_list.xml" value="0.2971014492753623" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/fragment_questions.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/fragment_quizstart.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/fragment_result.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/header_navigation_drawer.xml" value="1.0" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/nav_header_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/navigation_drawer.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/profile_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/layout/question_list_item.xml" value="0.2971014492753623" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/menu/drawer_menu.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor5/app/src/main/res/menu/navigation_menu.xml" value="0.25025641025641027" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor7/app/src/main/res/layout/activity_main.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor7/app/src/main/res/layout/fragment_details.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor7/app/src/main/res/layout/fragment_home.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor7/app/src/main/res/layout/fragment_question_list.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor7/app/src/main/res/layout/fragment_questions.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/android_labor/labor7/app/src/main/res/layout/question_list_item.xml" value="0.17300724637681159" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

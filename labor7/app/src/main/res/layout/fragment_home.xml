@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/homeImage"
+        android:layout_width="@dimen/home_image_width"
+        android:layout_height="@dimen/home_image_height"
+        android:layout_marginTop="@dimen/home_logo_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <TextView
+        android:id="@+id/enjoyTheAppTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/enjoy_the_quiz_text_margin_top"
+        android:text="@string/enjoy_the_quiz_app_text"
+        android:textSize="@dimen/your_name_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeImage" />
+
+    <Button
+        android:id="@+id/testYourSkillsButton"
+        android:layout_width="@dimen/home_buttons_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/first_home_button_margin_top"
+        android:text="@string/test_your_skills_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enjoyTheAppTextView"
+        style= "@style/chooseContactButtonStyle"/>
+
+    <Button
+        android:id="@+id/readQuestionsButton"
+        android:layout_width="@dimen/home_buttons_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_second_third_button_margin_top"
+        android:text="@string/read_questions_text"
+        app:layout_constraintStart_toStartOf="@+id/testYourSkillsButton"
+        app:layout_constraintTop_toBottomOf="@+id/testYourSkillsButton"
+        style= "@style/chooseContactButtonStyle"/>
+
+    <Button
+        android:id="@+id/createQuestionsButton"
+        android:layout_width="@dimen/home_buttons_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_second_third_button_margin_top"
+        android:text="@string/create_questions_text"
+        app:layout_constraintStart_toStartOf="@+id/readQuestionsButton"
+        app:layout_constraintTop_toBottomOf="@+id/readQuestionsButton"
+        style= "@style/chooseContactButtonStyle"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

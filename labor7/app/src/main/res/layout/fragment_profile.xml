@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/profile_image_width"
+        android:layout_height="@dimen/profile_image_height"
+        android:layout_marginTop="@dimen/profile_image_margin_top"
+        android:src="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/playerNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/player_name_high_score_text_size"
+        android:layout_marginStart="@dimen/player_name_margin_start"
+        android:layout_marginTop="@dimen/player_name_margin_top"
+        android:text="@string/player_name_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+
+    <TextView
+        android:id="@+id/phoneNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_number_text"
+        android:textSize="@dimen/player_name_high_score_text_size"
+        android:layout_marginTop="@dimen/high_score_margin_top"
+        app:layout_constraintStart_toStartOf="@+id/playerNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameTextView" />
+
+    <TextView
+        android:id="@+id/highScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/player_name_high_score_text_size"
+        android:layout_marginTop="@dimen/high_score_margin_top"
+        android:text="@string/high_score_text"
+        app:layout_constraintStart_toStartOf="@+id/phoneNumberTextView"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberTextView" />
+
+    <TextView
+        android:id="@+id/playersName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/name_text_color"
+        android:textSize="@dimen/player_name_high_score_text_size"
+        android:layout_marginStart="@dimen/player_name_high_score_margin_start"
+        app:layout_constraintStart_toEndOf="@+id/playerNameTextView"
+        app:layout_constraintTop_toTopOf="@+id/playerNameTextView" />
+
+    <TextView
+        android:id="@+id/playersPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/name_text_color"
+        android:textSize="@dimen/player_name_high_score_text_size"
+
+        app:layout_constraintStart_toStartOf="@+id/playersName"
+        app:layout_constraintTop_toTopOf="@+id/phoneNumberTextView" />
+
+    <TextView
+        android:id="@+id/highScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/name_text_color"
+        android:textSize="@dimen/player_name_high_score_text_size"
+        app:layout_constraintStart_toStartOf="@+id/playersName"
+        app:layout_constraintTop_toTopOf="@+id/highScoreTextView" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
