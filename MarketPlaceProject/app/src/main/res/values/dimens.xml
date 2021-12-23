@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="user_details_text_input_height">55dp</dimen>
+    <dimen name="user_details_text_input_padding">10dp</dimen>
+    <dimen name="bazaar_logo_margin_top">45dp</dimen>
+    <dimen name="bazaar_logo_height">31dp</dimen>
+    <dimen name="form_margin_left">20dp</dimen>
+    <dimen name="form_margin_right">20dp</dimen>
+    <dimen name="form_margin_top">70dp</dimen>
+    <dimen name="register_text_margin_start">55dp</dimen>
+    <dimen name="register_text_text_size">20sp</dimen>
+    <dimen name="register_username_layout_margin_top">30dp</dimen>
+    <dimen name="register_text_input_margin_start">55dp</dimen>
+    <dimen name="register_text_input_margin_end">55dp</dimen>
+    <dimen name="register_email_password_layout_margin_top">20dp</dimen>
+    <dimen name="register_input_layouts_height">70dp</dimen>
+    <dimen name="bazaar_logo_width">130dp</dimen>
+    <dimen name="buttons_corner_radius">20dp</dimen>
+    <dimen name="text_input_border_width">2dp</dimen>
+    <dimen name="already_have_account_margin_top">20dp</dimen>
+    <dimen name="already_have_account_margin_start">40dp</dimen>
+    <dimen name="forgot_password_margin_start">55dp</dimen>
+    <dimen name="log_in_text_margin_start">10dp</dimen>
+    <dimen name="register_input_margin_top">170dp</dimen>
+    <dimen name="log_in_text_padding_bottom">20dp</dimen>
+    <dimen name="click_here_text_margin_start">10dp</dimen>
+    <dimen name="line_image_view_margin_top">25dp</dimen>
+    <dimen name="sign_up_button_margin_top">20dp</dimen>
+    <dimen name="new_to_bazaar_text_view_margin_top">25dp</dimen>
+    <dimen name="login_form_height">600dp</dimen>
+    <dimen name="we_will_send_an_email_text_view_margin_top">20dp</dimen>
+</resources>

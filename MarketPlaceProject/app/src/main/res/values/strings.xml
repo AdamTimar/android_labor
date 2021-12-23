@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MarketPlaceProject</string>
+    <string name="register_text">Register</string>
+    <string name="password_hint_text">Password</string>
+    <string name="email_hint_text">Email</string>
+    <string name="username_hint_text">Username</string>
+    <string name="already_have_account_text">Already have an account?</string>
+    <string name="log_in_text">Log in</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password_text">Forgot password?</string>
+    <string name="click_here_text">Click here</string>
+    <string name="new_to_bazaar_text">New to Bazaar?</string>
+    <string name="sign_up_text">Sign Up</string>
+    <string name="forgot_password_text_2">Forgot password</string>
+    <string name="email_me_text">Email me</string>
+    <string name="we_will_send_an_email_text">We will send an email with instructions on how to reset your password.</string>
+</resources>
