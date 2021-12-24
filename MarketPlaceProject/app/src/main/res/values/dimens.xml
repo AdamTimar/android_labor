@@ -10,6 +10,7 @@
     <dimen name="register_text_margin_start">55dp</dimen>
     <dimen name="register_text_text_size">20sp</dimen>
     <dimen name="register_username_layout_margin_top">30dp</dimen>
+    <dimen name="forgot_password_email_layout_margin_top">20dp</dimen>
     <dimen name="register_text_input_margin_start">55dp</dimen>
     <dimen name="register_text_input_margin_end">55dp</dimen>
     <dimen name="register_email_password_layout_margin_top">20dp</dimen>
@@ -29,7 +30,7 @@
     <dimen name="new_to_bazaar_text_view_margin_top">25dp</dimen>
     <dimen name="login_form_height">600dp</dimen>
     <dimen name="we_will_send_an_email_text_view_margin_top">20dp</dimen>
-    <dimen name="forgot_password_form_height">320dp</dimen>
+    <dimen name="forgot_password_form_height">440dp</dimen>
     <dimen name="we_have_sent_mail_margin_top">40dp</dimen>
     <dimen name="email_me_button_margin_top">40dp</dimen>
     <dimen name="feedBack_form_height">260dp</dimen>

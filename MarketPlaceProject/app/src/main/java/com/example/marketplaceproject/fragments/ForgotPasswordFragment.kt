@@ -23,6 +23,8 @@ class ForgotPasswordFragment : Fragment() {
 
     private lateinit var emailTextInputLayout : TextInputLayout
     private lateinit var emailEditText: EditText
+    private lateinit var userNameTextInputLayout : TextInputLayout
+    private lateinit var userNameEditText: EditText
     private lateinit var emailMeButton : Button
     private var disposable : Disposable? = null
 
@@ -34,6 +36,8 @@ class ForgotPasswordFragment : Fragment() {
 
         emailTextInputLayout = rootView.findViewById(R.id.emailTextInputLayout3)
         emailEditText = rootView.findViewById(R.id.emailEditText3)
+        userNameTextInputLayout = rootView.findViewById(R.id.userNameTextInputLayout3 )
+        userNameEditText = rootView.findViewById(R.id.userNameEditText3)
         emailMeButton = rootView.findViewById(R.id.emailMeButton)
 
         setOnClickListenerForEmailMeButton()
@@ -43,18 +47,27 @@ class ForgotPasswordFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if(disposable!=null) {
+        if(disposable != null) {
             if (!disposable!!.isDisposed)
                 disposable!!.dispose()
         }
     }
+
+
 
     private fun setOnClickListenerForEmailMeButton(){
 
         emailMeButton.setOnClickListener {
 
             emailTextInputLayout.error = ""
+            userNameTextInputLayout.error = ""
+
             var areErrors = false
+
+            if (userNameEditText.text.isEmpty()) {
+                userNameTextInputLayout.error = "Please fill the username field!"
+                areErrors = true
+            }
 
             if (emailEditText.text.isEmpty()) {
                 emailTextInputLayout.error = "Please fill the email field!"
@@ -78,23 +91,37 @@ class ForgotPasswordFragment : Fragment() {
     private fun createPasswordResetObserver(){
 
         disposable = UserAccessLayer.getResetPasswordObservable(
-            "smth",
+            userNameEditText.text.toString(),
             emailEditText.text.toString(),
         )
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe(
                 {
-                    val bundle = Bundle()
-                    bundle.putString(Constants.EMAIL, emailEditText.text.toString())
-                    bundle.putString(Constants.PASSWORDCHANGEFEEDBACK, "registered")
+                    if (it) {
+                        val bundle = Bundle()
+                        bundle.putString(Constants.EMAIL, emailEditText.text.toString())
+                        bundle.putString(Constants.PASSWORDCHANGEFEEDBACK, "registered")
 
-                    val feedBackFragment = FeedBackFragment()
-                    feedBackFragment.arguments = bundle
+                        val feedBackFragment = FeedBackFragment()
+                        feedBackFragment.arguments = bundle
 
-                    val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                        val transaction =
+                            requireActivity().supportFragmentManager.beginTransaction()
 
-                    transaction.replace(R.id.loginFragmentContainerView, feedBackFragment).addToBackStack(null).commit()
+                        transaction.replace(R.id.loginFragmentContainerView, feedBackFragment)
+                            .addToBackStack(null).commit()
+                    }
+                    else{
+                        val toast =
+                            Toast.makeText(
+                                context,
+                                "Failed to reset password",
+                                Toast.LENGTH_LONG
+                            )
+                        toast.setGravity(Gravity.TOP, 0, 0)
+                        toast.show()
+                    }
                 },
                 {
                     val toast =
