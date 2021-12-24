@@ -15,4 +15,6 @@
     <string name="forgot_password_text_2">Forgot password</string>
     <string name="email_me_text">Email me</string>
     <string name="we_will_send_an_email_text">We will send an email with instructions on how to reset your password.</string>
+    <string name="activate_account_text">Activate account</string>
+    <string name="back_to_log_in_text">Back to log in</string>
 </resources>

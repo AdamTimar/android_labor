@@ -12,19 +12,24 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.marketplaceproject.R
+import com.example.marketplaceproject.retrofit.accesLayers.UserAccessLayer
 import com.example.marketplaceproject.utils.Constants
 import com.google.android.material.textfield.TextInputLayout
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import java.util.regex.Pattern
 
 class LoginFragment : Fragment() {
 
-    private lateinit var emailEditText : EditText
-    private lateinit var emailTextInputLayout: TextInputLayout
+    private lateinit var userNameEditText : EditText
+    private lateinit var userNameTextInputLayout: TextInputLayout
     private lateinit var passwordEditText : EditText
     private lateinit var passwordTextInputLayout : TextInputLayout
     private lateinit var loginButton : Button
     private lateinit var singUpButton : Button
     private lateinit var clickHereTextView : TextView
+    private var loginDisposable : Disposable? = null
 
     @SuppressLint("CutPasteId")
     override fun onCreateView(
@@ -33,8 +38,8 @@ class LoginFragment : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_login, container, false)
 
-        emailEditText = rootView.findViewById(R.id.emailEditText2)
-        emailTextInputLayout = rootView.findViewById(R.id.emailTextInputLayout2)
+        userNameEditText = rootView.findViewById(R.id.userNameEditText2)
+        userNameTextInputLayout = rootView.findViewById(R.id.userNameTextInputLayout2)
         passwordEditText = rootView.findViewById(R.id.passwordEditText2)
         passwordTextInputLayout = rootView.findViewById(R.id.passwordTextInputLayout2)
         loginButton = rootView.findViewById(R.id.loginButton)
@@ -46,6 +51,14 @@ class LoginFragment : Fragment() {
         setOnClickListenerForClickMeTextView()
 
         return rootView
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if(loginDisposable!=null) {
+            if (!loginDisposable!!.isDisposed)
+                loginDisposable!!.dispose()
+        }
     }
 
     private fun setOnClickListenerForSignUpButton(){
@@ -63,22 +76,16 @@ class LoginFragment : Fragment() {
 
         loginButton.setOnClickListener{
 
-            emailTextInputLayout.error = ""
+            userNameTextInputLayout.error = ""
             passwordTextInputLayout.error = ""
 
             var areErrors = false
 
-            if (emailEditText.text.isEmpty()) {
-                emailTextInputLayout.error = "Please fill the email field!"
+            if (userNameEditText.text.isEmpty()) {
+                userNameTextInputLayout.error = "Please fill the email field!"
                 areErrors = true
             }
 
-            else if (!Pattern.compile(Constants.EMAIL_REGEX_PATTERN).matcher(emailEditText.text)
-                    .matches()
-            ) {
-                emailTextInputLayout.error = "Not an email!"
-                areErrors = true
-            }
 
             if (passwordEditText.text.isEmpty()) {
                 passwordTextInputLayout.error = "Please fill the password field!"
@@ -86,9 +93,7 @@ class LoginFragment : Fragment() {
             }
 
             if (!areErrors) {
-                val toast = Toast.makeText(requireContext(), "Success", Toast.LENGTH_LONG)
-                toast.setGravity(Gravity.TOP,0,0)
-                toast.show()
+                createLoginObserver()
             }
 
         }
@@ -104,6 +109,32 @@ class LoginFragment : Fragment() {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
+    }
+
+    private fun createLoginObserver(){
+        loginDisposable = UserAccessLayer.getLoginObservable(
+            userNameEditText.text.toString(),
+            passwordEditText.text.toString(),
+        )
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+            .subscribe(
+                {
+                    val toast =
+                        Toast.makeText(context, "Login success", Toast.LENGTH_LONG)
+                    toast.setGravity(Gravity.TOP, 0, 0)
+                    toast.show()
+                },
+                {
+                    val toast =
+                        Toast.makeText(
+                            context,
+                            it.message.toString(),
+                            Toast.LENGTH_LONG
+                        )
+                    toast.setGravity(Gravity.TOP, 0, 0)
+                    toast.show()
+                })
     }
 
 }
