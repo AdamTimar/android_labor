@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.TimeLineFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/timeLineToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/form_background_color"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bazaar_logo" />
+
+            <ImageView
+                android:id="@+id/timeLineSearchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/search_icon"
+                android:layout_marginStart="@dimen/search_icon_margin_start" />
+
+            <ImageView
+                android:id="@+id/timeLineFilterIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/filter_icon_margin_start"
+                android:src="@drawable/filter_icon" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/timeLineAvatarIcon"
+                android:layout_width="@dimen/avatar_width"
+                android:layout_height="@dimen/avatar_height"
+                android:layout_marginStart="@dimen/avatar_margin_start"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar"
+                app:shapeAppearance="@style/ShapeAppearance.App.CircleImageView" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

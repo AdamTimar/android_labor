@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".fragments.ProfileFragment"
+        android:background="@color/black">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profileToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/form_background_color"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/profile_arrow"
+                    android:layout_width="@dimen/arrow_image_view_width"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/settings_textview_margin_start"
+                    android:gravity="center_vertical"
+                    android:text="@string/profile_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/settings_textview_text_size" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shapeableImageView"
+            android:layout_width="@dimen/avatar_big_width"
+            android:layout_height="@dimen/avatar_big_height"
+            android:layout_marginTop="@dimen/avatar_big_margin_top"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.App.CircleImageView" />
+
+        <TextView
+            android:id="@+id/profileNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shapeableImageView"
+            android:layout_marginTop="@dimen/profile_name_textview_margin_top"
+            android:textSize="@dimen/profile_name_textview_text_size"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_hint_text"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/profile_details_header_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileNameTextView"
+            android:layout_marginTop="@dimen/profile_email_header_margin_top"
+            android:layout_marginStart="@dimen/profile_email_header_margin_start"/>
+
+        <TextView
+            android:id="@+id/profileEmailTextView"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/profile_email_header_margin_start"
+            android:layout_marginEnd="@dimen/profile_email_header_margin_start"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/profile_details_margin_top"
+            android:textSize="@dimen/profile_details_text_size"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username_hint_text"
+            android:layout_marginTop="@dimen/profile_username_phone_number_margin_top"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/profile_details_header_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/profile_email_header_margin_start"
+            app:layout_constraintTop_toBottomOf="@+id/profileEmailTextView" />
+
+        <TextView
+            android:id="@+id/profileUserNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/profile_details_text_size"
+            android:layout_marginTop="@dimen/profile_details_margin_top"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:layout_marginStart="@dimen/profile_email_header_margin_start"
+            android:layout_marginEnd="@dimen/profile_email_header_margin_start"/>
+
+        <TextView
+            android:id="@+id/profilePhoneNumberHeaderTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/profile_username_phone_number_margin_top"
+            android:text="@string/phone_number_text"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/profile_details_header_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/profile_email_header_margin_start"
+            app:layout_constraintTop_toBottomOf="@+id/profileUserNameTextView" />
+
+        <TextView
+            android:id="@+id/profilePhoneNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/profile_details_text_size"
+            android:layout_marginTop="@dimen/profile_details_margin_top"
+            app:layout_constraintStart_toStartOf="@+id/profilePhoneNumberHeaderTextView"
+            app:layout_constraintTop_toBottomOf="@+id/profilePhoneNumberHeaderTextView" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/profilePhoneNumberTextView"
+            android:paddingBottom="@dimen/update_profile_button_padding_bottom">
+
+            <Button
+                android:id="@+id/updateProfileButton"
+                style="@style/roundedButtonNoBackGroundColorStyle"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/register_text_input_margin_start"
+                android:layout_marginTop="@dimen/sign_up_button_margin_top"
+                android:layout_marginEnd="@dimen/register_text_input_margin_end"
+                android:text="@string/update_profile_text"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

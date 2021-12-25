@@ -6,6 +6,8 @@ class Constants {
         val EMAIL = "email"
         val REGISTRATIONFEEDBACK = "registrationFeedBack"
         val PASSWORDCHANGEFEEDBACK = "passwordChangeFeedBack"
-
+        val SHAREDPREF = "sharedpref"
+        val TOKEN = "token"
+        val USERNAME = "username"
     }
 }

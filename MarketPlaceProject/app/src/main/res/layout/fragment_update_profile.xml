@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_black">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/updateProfileToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/form_background_color"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/updateProfile_arrow"
+                    android:layout_width="@dimen/arrow_image_view_width"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/settings_textview_margin_start"
+                    android:gravity="center_vertical"
+                    android:text="@string/settings_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/settings_textview_text_size" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/updateProfileTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/register_text_margin_start"
+            android:layout_marginTop="@dimen/register_input_margin_top"
+            android:text="@string/update_profile_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/register_text_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateUserNameTextInputLayout"
+            android:layout_width="match_parent"
+            style="@style/registerTextInputLayoutStyle"
+            app:errorEnabled="true"
+            android:layout_marginTop="@dimen/register_username_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            app:layout_constraintEnd_toEndOf="@+id/updateProfileTextView"
+            app:layout_constraintStart_toStartOf="@+id/updateProfileTextView"
+            app:layout_constraintTop_toBottomOf="@+id/updateProfileTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateUserNameEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updatePhoneNumberTextInputLayout"
+            android:layout_width="match_parent"
+            style="@style/registerTextInputLayoutStyle"
+            app:errorEnabled="true"
+            android:layout_marginTop="@dimen/register_email_password_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            app:layout_constraintEnd_toEndOf="@+id/updateUserNameTextInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/updateUserNameTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/updateUserNameTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updatePhoneNumberEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updatePasswordTextInputLayout"
+            android:layout_width="match_parent"
+            style="@style/registerTextInputLayoutStyle"
+            app:passwordToggleEnabled="true"
+            app:errorEnabled="true"
+            android:layout_marginTop="@dimen/register_email_password_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            app:layout_constraintEnd_toEndOf="@+id/updateUserNameTextInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/updateUserNameTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/updatePhoneNumberTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updatePasswordEditText"
+                style="@style/registerEditTextStyle"
+                android:inputType="textPassword"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/updateProfileButton2"
+            style="@style/roundedButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/register_email_password_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            android:text="@string/update_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updatePasswordTextInputLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

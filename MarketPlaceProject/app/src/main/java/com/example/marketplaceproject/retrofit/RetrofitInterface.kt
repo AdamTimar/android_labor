@@ -8,12 +8,22 @@ import retrofit2.http.*
 interface RetrofitInterface {
     @FormUrlEncoded
     @POST("user/register")
-    fun register(@FieldMap params: Map<String,String>): Call<RegistrationResponse>
+    fun register(@FieldMap params: Map<String,String>): Call<RegistrationResult>
 
     @POST("user/login")
-    fun login(@Body loginCredentials: LoginCredentials): Call<LoginResponse>
+    fun login(@Body loginCredentials: LoginCredentials): Call<LoginResult>
 
     @POST("user/reset")
-    fun resetPassword(@Body passwordResetModel: PasswordResetModel): Call<PasswordResetResponse>
+    fun resetPassword(@Body passwordResetModel: PasswordResetModel): Call<PasswordResetResult>
+
+    @GET("user/data")
+    fun getUserDetails(@Header("username") userName: String): Call<BackEndResponse<List<UserDetailsResult>>>
+
+    @FormUrlEncoded
+    @POST("user/update")
+    fun updateUser(@Header("token") token: String, @FieldMap params: Map<String,String>): Call<UpdateUserBackEndResponse<UpdateUserResult>>
+
+    @GET("user/reset")
+    fun resetPasswordWithToken(@Header("token") token: String, @Header("new_password") newPassword: String): Call<PasswordResetResult>
 
 }

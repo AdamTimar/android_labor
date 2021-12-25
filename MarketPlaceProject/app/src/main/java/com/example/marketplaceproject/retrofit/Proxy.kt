@@ -25,4 +25,7 @@ object Proxy {
     fun register(email: String, userName: String, password: String) = service.register(mapOf("username" to userName, "email" to email, "password" to password)).execute().body()
     fun login(userName: String, password:String) = service.login(LoginCredentials(userName, password)).execute().body()
     fun resetPassword(userName: String, email: String) = service.resetPassword(PasswordResetModel(userName,email)).execute().body()
+    fun getUserDetails(userName: String) = service.getUserDetails(userName).execute().body()
+    fun updateUserDetails(userName: String, phoneNumber: String, token: String) = service.updateUser(token, mapOf("username" to userName, "phone_number" to phoneNumber)).execute().body()
+    fun resetPasswordWithToken(token: String, newPassword: String) = service.resetPasswordWithToken(token, newPassword).execute().body()
 }

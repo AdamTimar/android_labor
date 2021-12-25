@@ -17,4 +17,9 @@
     <string name="we_will_send_an_email_text">We will send an email with instructions on how to reset your password.</string>
     <string name="activate_account_text">Activate account</string>
     <string name="back_to_log_in_text">Back to log in</string>
+    <string name="settings_text">Settings</string>
+    <string name="phone_number_text">Phone number</string>
+    <string name="profile_text">Profile</string>
+    <string name="update_profile_text">Update profile</string>
+    <string name="update_text">update</string>
 </resources>

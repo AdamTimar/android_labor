@@ -24,5 +24,11 @@
         <item name="android:background">@drawable/rounded_button_no_bg_color_border</item>
     </style>
 
+    <style name="ShapeAppearance.App.CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
 
 </resources>

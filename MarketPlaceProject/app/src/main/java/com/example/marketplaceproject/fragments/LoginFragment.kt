@@ -1,6 +1,7 @@
 package com.example.marketplaceproject.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import androidx.fragment.app.Fragment
@@ -12,6 +13,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.marketplaceproject.R
+import com.example.marketplaceproject.activities.LoginActivity
+import com.example.marketplaceproject.activities.MainActivity
 import com.example.marketplaceproject.retrofit.accesLayers.UserAccessLayer
 import com.example.marketplaceproject.utils.Constants
 import com.google.android.material.textfield.TextInputLayout
@@ -46,7 +49,8 @@ class LoginFragment : Fragment() {
         singUpButton = rootView.findViewById(R.id.signUpButton)
         clickHereTextView = rootView.findViewById(R.id.clickHereTextView)
 
-        setOnClickListenerForLoginButton()
+        //setOnClickListenerForLoginButton()
+        goo()
         setOnClickListenerForSignUpButton()
         setOnClickListenerForClickMeTextView()
 
@@ -67,7 +71,6 @@ class LoginFragment : Fragment() {
             val fragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction  = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.loginFragmentContainerView, RegisterFragment())
-            fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
     }
@@ -100,6 +103,17 @@ class LoginFragment : Fragment() {
 
     }
 
+    private fun goo(){
+        loginButton.setOnClickListener{
+
+            userNameEditText.setText("AdamTimar")
+            passwordEditText.setText("12345678")
+
+            createLoginObserver()
+
+        }
+    }
+
     private fun setOnClickListenerForClickMeTextView(){
 
         clickHereTextView.setOnClickListener {
@@ -120,10 +134,13 @@ class LoginFragment : Fragment() {
             .subscribeOn(Schedulers.io())
             .subscribe(
                 {
-                    val toast =
-                        Toast.makeText(context, "Login success", Toast.LENGTH_LONG)
-                    toast.setGravity(Gravity.TOP, 0, 0)
-                    toast.show()
+                    val intent = Intent(requireActivity(), MainActivity::class.java)
+                    val edit = (activity as LoginActivity).shared.edit()
+                    edit.putString(Constants.TOKEN, it.token)
+                    edit.putString(Constants.USERNAME, it.userName)
+                    edit.apply()
+                    startActivity(intent)
+                    requireActivity().finish()
                 },
                 {
                     val toast =

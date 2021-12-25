@@ -4,4 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity"/>
+    tools:context=".activities.MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mainFragmentContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/main_activity_fragment_container_margin_bottom"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/form_background_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav"
+        app:itemIconSize="@dimen/bottom_navigation_icon_size"
+        app:itemIconTint="@color/white"
+        android:paddingBottom="@dimen/bottom_navigation_items_padding_bottom"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
