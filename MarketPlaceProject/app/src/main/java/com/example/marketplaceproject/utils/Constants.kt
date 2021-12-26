@@ -9,5 +9,14 @@ class Constants {
         val SHAREDPREF = "sharedpref"
         val TOKEN = "token"
         val USERNAME = "username"
+        val RATING = "rating"
+        val AMOUNTTYPE = "amountType"
+        val PRICETYPE = "pryceType"
+        val PRODUCTID = "productId"
+        val ISACTIVE = "isActive"
+        val PRICEPERUNIT = "pricePerUnit"
+        val UNITS = "units"
+        val DESCRIPTION = "description"
+        val TITLE = "title"
     }
 }

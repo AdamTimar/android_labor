@@ -29,6 +29,11 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="orderNowButtonStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/order_now_button_border</item>
+    </style>
+
 
 
 </resources>

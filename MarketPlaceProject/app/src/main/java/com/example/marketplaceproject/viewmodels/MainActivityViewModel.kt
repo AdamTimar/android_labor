@@ -1,15 +1,15 @@
 package com.example.marketplaceproject.viewmodels
 
 import android.annotation.SuppressLint
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import com.example.marketplaceproject.retrofit.models.UserDetails
+import androidx.lifecycle.ViewModel
+import com.example.marketplaceproject.models.Product
+import com.example.marketplaceproject.models.UserDetails
 
-class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
+class MainActivityViewModel : ViewModel() {
 
     @SuppressLint("StaticFieldLeak")
-    private val context = getApplication<Application>().applicationContext
-    var userDetails : UserDetails? = null
-
+    lateinit var userDetails : UserDetails
+    lateinit var products : MutableList<Product>
+    lateinit var myProducts : MutableList<Product>
 
 }

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".fragments.ProfileFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/productDetailToolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/form_background_color"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/product_detail_arrow2"
+                    android:layout_width="@dimen/arrow_image_view_width"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/settings_textview_margin_start"
+                    android:gravity="center_vertical"
+                    android:text="@string/product_detail_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/settings_textview_text_size" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/productDetailProductImageView2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productDetailToolbar2"
+            android:background="@drawable/cheese" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/productDetailOwnerImageView2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:scaleType="centerCrop"
+            android:textColor="@color/form_background_color"
+            android:src="@drawable/avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productDetailProductImageView2"
+            app:shapeAppearance="@style/ShapeAppearance.App.CircleImageView" />
+
+        <TextView
+            android:id="@+id/productDetailOwnerName2"
+            android:layout_width="357dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/form_background_color"
+            app:layout_constraintStart_toEndOf="@+id/productDetailOwnerImageView2"
+            app:layout_constraintTop_toTopOf="@+id/productDetailOwnerImageView2" />
+
+        <TextView
+            android:id="@+id/productDetailProductName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productDetailOwnerName2" />
+
+        <TextView
+            android:id="@+id/productDetailProductPrice2"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/productDetailProductName2" />
+
+        <ImageView
+            android:id="@+id/productStatus2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/available"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productDetailProductName2" />
+
+        <TextView
+            android:id="@+id/productAvailableAmount2"
+            android:layout_width="wrap_content"
+            android:text = "@string/available_amount_text"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/form_background_color"
+            app:layout_constraintStart_toStartOf="@+id/productDetailProductPrice2"
+            app:layout_constraintTop_toBottomOf="@+id/productDetailProductPrice2" />
+
+        <TextView
+            android:id="@+id/productDescription2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/form_background_color"
+            app:layout_constraintStart_toStartOf="@+id/productAvailableAmount2"
+            app:layout_constraintTop_toBottomOf="@+id/productAvailableAmount2" />
+
+        <TextView
+            android:id="@+id/availableAmountResult2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/productAvailableAmount2"
+            app:layout_constraintTop_toTopOf="@+id/productAvailableAmount2" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/productDescription2"
+            android:paddingBottom="@dimen/update_profile_button_padding_bottom">
+
+            <Button
+                android:id="@+id/updateProductButton"
+                style="@style/roundedButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/register_text_input_margin_start"
+                android:layout_marginTop="@dimen/sign_up_button_margin_top"
+                android:layout_marginEnd="@dimen/register_text_input_margin_end"
+                android:text="@string/update_product_text"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

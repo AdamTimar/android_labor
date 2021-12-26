@@ -49,8 +49,8 @@ class LoginFragment : Fragment() {
         singUpButton = rootView.findViewById(R.id.signUpButton)
         clickHereTextView = rootView.findViewById(R.id.clickHereTextView)
 
-        //setOnClickListenerForLoginButton()
-        goo()
+        setOnClickListenerForLoginButton()
+        //goo()
         setOnClickListenerForSignUpButton()
         setOnClickListenerForClickMeTextView()
 

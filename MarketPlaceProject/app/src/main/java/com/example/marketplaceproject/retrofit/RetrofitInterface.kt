@@ -26,4 +26,10 @@ interface RetrofitInterface {
     @GET("user/reset")
     fun resetPasswordWithToken(@Header("token") token: String, @Header("new_password") newPassword: String): Call<PasswordResetResult>
 
+    @GET("products")
+    fun getProducts(@Header("token") token: String, @Header("limit") limit: Int) : Call<ProductsResponse<List<ProductsResult>>>
+
+    @FormUrlEncoded
+    @POST("products/add")
+    fun addProduct(@Header("token") token: String, @FieldMap params: Map<String,Any>) : Call<AddProductResponse>
 }

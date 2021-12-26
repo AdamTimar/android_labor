@@ -22,4 +22,8 @@
     <string name="profile_text">Profile</string>
     <string name="update_profile_text">Update profile</string>
     <string name="update_text">update</string>
+    <string name="product_detail_text">Product detail</string>
+    <string name="available_amount_text">Available amount:</string>
+    <string name="update_product_text">Update product</string>
+    <string name="active">Active</string>
 </resources>

@@ -14,17 +14,18 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.example.marketplaceproject.R
 import com.example.marketplaceproject.activities.MainActivity
 import com.example.marketplaceproject.retrofit.accesLayers.UserAccessLayer
-import com.example.marketplaceproject.retrofit.models.UserDetails
+import com.example.marketplaceproject.models.UserDetails
 import com.example.marketplaceproject.utils.Constants
+import com.example.marketplaceproject.viewmodels.MainActivityViewModel
 import com.google.android.material.textfield.TextInputLayout
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.lang.Integer.parseInt
-import java.util.regex.Pattern
 
 
 class UpdateProfileFragment : Fragment() {
@@ -39,11 +40,14 @@ class UpdateProfileFragment : Fragment() {
     private var updateProfileDisposable: Disposable? = null
     private var changePasswordDisposable: Disposable? = null
 
-    lateinit var shared : SharedPreferences
+    private lateinit var shared : SharedPreferences
+
+    private lateinit var mainActivityViewModel : MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         shared = requireActivity().getSharedPreferences(Constants.SHAREDPREF , Context.MODE_PRIVATE)
+        mainActivityViewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -61,9 +65,9 @@ class UpdateProfileFragment : Fragment() {
         updateProfileButton = rootView.findViewById(R.id.updateProfileButton2)
         updatePasswordEditText = rootView.findViewById(R.id.updatePasswordEditText)
 
-        userNameEditText.setText((activity as MainActivity).mainActivityViewModel.userDetails?.userName)
+        userNameEditText.setText(mainActivityViewModel.userDetails?.userName)
 
-        val phoneNumber = (activity as MainActivity).mainActivityViewModel.userDetails?.phoneNumber
+        val phoneNumber = mainActivityViewModel.userDetails?.phoneNumber
 
         if(phoneNumber != null)
             phoneNumberEditText.setText(phoneNumber.toString())
@@ -145,7 +149,7 @@ class UpdateProfileFragment : Fragment() {
             .subscribeOn(Schedulers.io())
             .subscribe(
                 {
-                    (activity as MainActivity).mainActivityViewModel.userDetails =
+                    mainActivityViewModel.userDetails =
                         UserDetails(it.userName, it.email, it.phoneNumber)
                     Log.d("oldToken", shared.getString(Constants.TOKEN,"")!!)
                     shared.edit().remove(Constants.TOKEN)

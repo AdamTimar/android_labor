@@ -7,7 +7,7 @@
     tools:context=".fragments.TimeLineFragment">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/timeLineToolbar"
+        android:id="@+id/myMarketToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/form_background_color"
@@ -26,7 +26,7 @@
 
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/timeLineAvatarIcon"
+                android:id="@+id/myMarketAvatarIcon"
                 android:layout_width="@dimen/avatar_width"
                 android:layout_height="@dimen/avatar_height"
                 android:layout_marginStart="@dimen/avatar_margin_start"
@@ -38,23 +38,23 @@
     </androidx.appcompat.widget.Toolbar>
 
     <SearchView
-        android:id = "@+id/timeLineSearchView"
+        android:id = "@+id/myMarketSearchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeLineToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/myMarketToolbar"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Spinner
-        android:id="@+id/dropStatus"
+        android:id="@+id/myMarketdropStatus"
         android:layout_width="@dimen/spinner_width"
         android:layout_height="@dimen/spinner_height"
         android:drawSelectorOnTop="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/timeLineSearchView" />
+        app:layout_constraintTop_toBottomOf="@id/myMarketSearchView" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/timeLineRecyclerView"
+        android:id="@+id/myMarketRecyclerView"
         android:background="@color/timeLineRecViewBgColor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

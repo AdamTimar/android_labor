@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/timelineItem"
         android:icon="@drawable/ic_timeline" />
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/myMarketItem"
         android:icon="@drawable/ic_my_market"/>
     <item
-        android:id="@+id/settingsFragment"
+        android:id="@+id/myFaresItem"
         android:icon="@drawable/ic_my_fares" />
 
 </menu>

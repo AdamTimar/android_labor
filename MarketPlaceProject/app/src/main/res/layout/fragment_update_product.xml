@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/updateProductToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/form_background_color"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/updateProduct_arrow"
+                    android:layout_width="@dimen/arrow_image_view_width"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/settings_textview_margin_start"
+                    android:gravity="center_vertical"
+                    android:text="@string/product_detail_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/settings_textview_text_size" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/updateProductTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/register_text_margin_start"
+            android:layout_marginTop="@dimen/register_input_margin_top"
+            android:text="@string/update_product_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/register_text_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateTitleTextInputLayout"
+            android:layout_width="match_parent"
+            android:hint = "Title"
+            style="@style/registerTextInputLayoutStyle"
+            app:errorEnabled="true"
+            android:layout_marginTop="@dimen/register_username_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            app:layout_constraintEnd_toEndOf="@+id/updateProductTextView"
+            app:layout_constraintStart_toStartOf="@+id/updateProductTextView"
+            app:layout_constraintTop_toBottomOf="@+id/updateProductTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateTitleEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateRatingTextInputLayout"
+            android:layout_width="match_parent"
+            android:hint = "Rating"
+            style="@style/registerTextInputLayoutStyle"
+            app:errorEnabled="true"
+            android:layout_marginTop="@dimen/register_email_password_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            app:layout_constraintEnd_toEndOf="@+id/updateTitleTextInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/updateTitleTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/updateTitleTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateRatingEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateAmountTypeTextInputLayout"
+            android:layout_width="match_parent"
+            android:hint = "Amount type"
+            style="@style/registerTextInputLayoutStyle"
+            android:layout_marginTop="@dimen/register_email_password_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            app:layout_constraintEnd_toEndOf="@+id/updateRatingTextInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/updateRatingTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/updateRatingTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateAmountTypeEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updatePricePerUnitTextInputLayout"
+            android:hint = "Price per unit"
+            android:layout_width="match_parent"
+            style="@style/registerTextInputLayoutStyle"
+            android:layout_marginTop="@dimen/register_email_password_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            app:layout_constraintEnd_toEndOf="@+id/updateAmountTypeTextInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/updateAmountTypeTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/updateAmountTypeTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updatePricePerUnitEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updatePriceTypeTextInputLayout"
+            android:hint = "Pryce type"
+            android:layout_width="match_parent"
+            style="@style/registerTextInputLayoutStyle"
+            android:layout_marginTop="@dimen/register_email_password_layout_margin_top"
+            android:layout_marginStart="@dimen/register_text_input_margin_start"
+            android:layout_marginEnd="@dimen/register_text_input_margin_end"
+            app:layout_constraintEnd_toEndOf="@+id/updatePricePerUnitTextInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/updatePricePerUnitTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/updatePricePerUnitTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updatePriceTypeEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/switch1"
+            android:paddingBottom="@dimen/update_profile_button_padding_bottom">
+
+            <Button
+                android:id="@+id/updateProductButton"
+                style="@style/roundedButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/register_text_input_margin_start"
+                android:layout_marginTop="@dimen/sign_up_button_margin_top"
+                android:layout_marginEnd="@dimen/register_text_input_margin_end"
+                android:text="@string/update_profile_text"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </RelativeLayout>
+
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/active"
+            android:background="@color/register_button_color"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/updatePriceTypeTextInputLayout"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart = "@dimen/register_text_input_margin_start"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

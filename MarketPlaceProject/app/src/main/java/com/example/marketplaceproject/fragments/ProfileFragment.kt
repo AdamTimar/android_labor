@@ -23,15 +23,15 @@ class ProfileFragment : Fragment() {
     private lateinit var profileNameTextView : TextView
     private lateinit var arrowImageView : ImageView
     private lateinit var updateProfileButton: Button
+    private lateinit var mainActivityViewModel: MainActivityViewModel
 
-    /*
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainActivityViewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
-        mainActivityViewModel = MainActivityViewModel(requireActivity().application)
     }
 
-     */
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,19 +47,19 @@ class ProfileFragment : Fragment() {
         arrowImageView = rootView.findViewById(R.id.profile_arrow)
         updateProfileButton = rootView.findViewById(R.id.updateProfileButton)
 
-        emailTextView.text = (activity as MainActivity).mainActivityViewModel.userDetails?.email
-        userNameTextView.text = (activity as MainActivity).mainActivityViewModel.userDetails?.userName
-        profileNameTextView.text = (activity as MainActivity).mainActivityViewModel.userDetails?.userName
+        emailTextView.text = mainActivityViewModel.userDetails?.email
+        userNameTextView.text = mainActivityViewModel.userDetails?.userName
+        profileNameTextView.text = mainActivityViewModel.userDetails?.userName
 
 
-        val phoneNumber = (activity as MainActivity).mainActivityViewModel.userDetails?.email
+        val phoneNumber = mainActivityViewModel.userDetails?.email
         if(phoneNumber == null){
             phoneNumberTextView.visibility = View.GONE
             phoneNumberHeaderTextView.visibility = View.GONE
         }
 
         else{
-            phoneNumberTextView.text = (activity as MainActivity).mainActivityViewModel.userDetails?.phoneNumber.toString()
+            phoneNumberTextView.text = mainActivityViewModel.userDetails?.phoneNumber.toString()
         }
 
         setOnClickListenerOnArrow()

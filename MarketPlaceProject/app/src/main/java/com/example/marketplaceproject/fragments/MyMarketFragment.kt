@@ -1,6 +1,7 @@
 package com.example.marketplaceproject.fragments
 
 import android.annotation.SuppressLint
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -15,21 +16,23 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marketplaceproject.R
+import com.example.marketplaceproject.adapters.MyProductsAdapter
 import com.example.marketplaceproject.adapters.ProductsAdapter
 import com.example.marketplaceproject.models.Product
 import com.example.marketplaceproject.retrofit.accesLayers.ProductAccessLayer
 import com.example.marketplaceproject.utils.Constants
 import com.example.marketplaceproject.viewmodels.MainActivityViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 
-class TimeLineFragment : Fragment(),ProductsAdapter.OnItemClickListener {
+class MyMarketFragment : Fragment(),MyProductsAdapter.OnItemClickListener {
 
     private lateinit var avatar: ImageView
     private lateinit var mainActivityViewModel: MainActivityViewModel
     private lateinit var productsRecyclerView : RecyclerView
-    private lateinit var productsAdapter: ProductsAdapter
+    private lateinit var productsAdapter: MyProductsAdapter
     private lateinit var searchView: SearchView
     private lateinit var products : MutableList<Product>
     private lateinit var spinner : Spinner
@@ -37,8 +40,8 @@ class TimeLineFragment : Fragment(),ProductsAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainActivityViewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
-        products = mutableListOf<Product>().apply { addAll( mainActivityViewModel.products)}
-        productsAdapter = ProductsAdapter(products,this)
+        products = mainActivityViewModel.myProducts
+        productsAdapter = MyProductsAdapter(products,this)
     }
 
     override fun onCreateView(
@@ -54,6 +57,8 @@ class TimeLineFragment : Fragment(),ProductsAdapter.OnItemClickListener {
         productsRecyclerView = rootView.findViewById(R.id.timeLineRecyclerView)
 
         searchView = rootView.findViewById(R.id.timeLineSearchView)
+
+        products = mutableListOf<Product>().apply { addAll( mainActivityViewModel.myProducts)}
 
         productsRecyclerView.adapter = productsAdapter
 
@@ -162,7 +167,7 @@ class TimeLineFragment : Fragment(),ProductsAdapter.OnItemClickListener {
 
         val manager: FragmentManager = requireActivity().supportFragmentManager
         val transaction: FragmentTransaction = manager.beginTransaction()
-        val productDetailsFragment = ProductDetailsFragment()
+        val productDetailsFragment = MyProductDetailsFragment()
         productDetailsFragment.arguments = bundle
         transaction.replace(R.id.mainFragmentContainerView, productDetailsFragment)
         transaction.commit()

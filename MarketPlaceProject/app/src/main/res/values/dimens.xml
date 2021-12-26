@@ -58,4 +58,11 @@
     <dimen name="main_activity_fragment_container_margin_bottom">65dp</dimen>
     <dimen name="arrow_image_view_width">35dp</dimen>
     <dimen name="update_profile_button_padding_bottom">30dp</dimen>
+    <dimen name="time_line_recycler_view_margin_top">200dp</dimen>
+    <dimen name="card_view_layout_margin">5dp</dimen>
+    <dimen name="card_view_radius">8dp</dimen>
+    <dimen name="card_view_elevation">8dp</dimen>
+    <dimen name="card_max_elevation">10dp</dimen>
+    <dimen name="spinner_width">230dp</dimen>
+    <dimen name="spinner_height">30dp</dimen>
 </resources>
